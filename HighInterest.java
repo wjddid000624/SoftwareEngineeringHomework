@@ -37,6 +37,9 @@ class HighInterest implements Account {
 		for(int i = 0; i < elapsedDate; i++) {
 			balance *= interestRate;
 		}
+		if(balance < 1000) {
+			balance = 1000;
+		}
 	}
 
 	public void deposit(double amount) {
@@ -49,5 +52,8 @@ class HighInterest implements Account {
 			throw new NotEnoughException();
 		}
 		balance -= amount;
+		if(balance < 1000) {
+			balance = 1000;
+		}
 	}
 }

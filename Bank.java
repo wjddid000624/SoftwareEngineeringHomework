@@ -87,7 +87,7 @@ public class Bank {
 			account = new LowInterest(name, accNumCounter, initial);
 		}
 		accs.put(accNumCounter, account);
-		accsByName.put(name, account);
+		accsByName.putIfAbsent(name, account);
 		accNumCounter++;
 		return account;
 	}
